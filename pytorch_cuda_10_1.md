@@ -36,3 +36,12 @@ conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10
 You can find the command navigating here: [Getting started with previous versions](https://pytorch.org/get-started/previous-versions/).
 
 ## Restart the OS
+
+## Check if torch can use Cuda
+
+Run:
+```
+python -c "import torch;print(torch.cuda.is_available())"
+```
+
+The output should be: `True`.
