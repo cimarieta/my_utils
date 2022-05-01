@@ -1,5 +1,7 @@
 # Installing Pytorch with Cuda 10.1 on Ubuntu
 
+⚠️ If using WSL, make sure you have: (1) [installed the proper NVIDIA driver](https://www.nvidia.com/Download/index.aspx?lang=en-us) on Windows; and (2) installed/converted to WSL 2 (see instructions [here](https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10)) before following this tutorial.
+
 ## Install Nvidia Cuda Toolkit
 
 ``` 
