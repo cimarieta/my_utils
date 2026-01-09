@@ -1,6 +1,3 @@
-init.nvim
-
-```
 set nocompatible              " required
 "filetype off                  " required
 " set the runtime path to include Vundle and initialize
@@ -13,18 +10,18 @@ Plugin 'gmarik/Vundle.vim'
 " para nvim
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 " autocomplete for python
-Plugin 'maralla/completor.vim'
-"Plugin 'davidhalter/jedi-vim'
+" Plugin 'maralla/completor.vim'
+" Plugin 'davidhalter/jedi-vim'
 " autoindent in python
 " Plugin 'vim-scripts/indentpython.vim'
 " autoindent using pep8
-"Plugin 'Vimjas/vim-python-pep8-indent'
+" Plugin 'Vimjas/vim-python-pep8-indent'
 " folding
 Plugin 'tmhedberg/SimpylFold'
 " checks syntax
 Plugin 'scrooloose/syntastic'
 " checks PEP8
-"Plugin 'nvie/vim-flake8'
+Plugin 'nvie/vim-flake8'
 " git support (commands with capital G)
 Plugin 'tpope/vim-fugitive'
 " vim-airline (config status bar)
@@ -34,6 +31,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'derekwyatt/vim-scala'
 " awesome-vim-colorschemes
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'AnsiEsc.vim'
+Plugin 'scalameta/nvim-metals'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,11 +63,11 @@ nnoremap <space> za
 :tnoremap <Esc> <C-\><C-n>
 " syntastic config
 let g:syntastic_python_checkers=["pyflakes", "pep8"]
-let g:syntastic_python_pep8_args='--ignore=E501,E225,E731,E265,E125,E128,E402,E201,E202,E226,E211'
+let g:syntastic_python_pep8_args='--ignore=E225,E731,E265,E125,E128,E402,E201,E202,E226,E211 --max-line-length=120'
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 "let g:syntastic_python_flake8_args="--select=F,C9,N8"
 "let g:syntastic_python_pep8_args="--select=F,C9,N8"
 let g:syntastic_mode_map = {
@@ -95,7 +95,7 @@ let g:airline_theme='luna'
 " Note, the above line is ignored in Neovim 0.1.5 above, use this line instead.
 "set termguicolors
 "completor
-let g:completor_python_binary = '/home/user/conda/bin/python'
+let g:completor_python_binary = '/Users/cinthia.tanaka/miniforge3/bin/python3'
 " use tab to select completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -103,4 +103,3 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 " use shift tab to trigger completion
 let g:completor_auto_trigger = 0
 "inoremap <expr> <Tab> pumvisible() ? "<C-N>" : "<C-R>=completor#do('complete')<CR>"
-```
